@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<script type = "text/javascript">
+    document.write("<caption> 요일 영번역</caption><br>");
+document.write("<tr>");
+document.write("<th> 제목 </th><br>");
+document.write("</tr>");
+
+var day1 = "월요일";
+var day2 = "화요일";
+var day3 = "수요일";
+var day4 = "목요일";
+var day5 = "금요일";
+var day6 = "토요일";
+var day7 = "일요일";
+
+var eday1 = "Monday";
+var eday2 ="Tuesday";
+var eday3 = "Wednesday";
+var eday4 = "Thursday";
+var eday5 ="Friday";
+var eday6 ="Saturday";
+var eday7 = "Sunday"
+
+var book_list = day1 + "\n" + day2 + "\n" + day3 + "\n" + day4 + "\n" + day5 + "\n" + day6 + "\n" + day7;
+var choice = prompt("키워드를 입력하세요...\n" + book_list, "");
+
+switch(choice) {
+    case "월요일":
+        title = eday1; break;
+    case "화요일":
+        title = eday2; break;
+    case "수요일":
+        title = eday3; break;
+    case "목요일":
+        title = eday4; break;
+    case "금요일":
+        title = eday5; break;
+    case "토요일":
+        title = eday6; break;
+    case "일요일":
+        title = eday7; break;
+
+    default:
+        alert("리스트에 없는 책을 선택하셨습니다.");
+        title = "";
+}
+
+document.write("<tr>");
+document.write("<td>" + title + "</td>");
+document.write("</tr>");
+</script>
+</body>
+</html>
+

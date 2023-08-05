@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+  <title>Homepage Profile</title>
+  <style>
+    /* CSS styles for the form and profile */
+    .profile-form {
+      margin: 20px;
+      width: 100%; /* Set the form width to 100% */
+      max-width: 400px; /* Optional: Set a maximum width for the form */
+    }
+
+    .profile-input {
+      margin-bottom: 10px;
+      width: 100%; /* Set the input fields width to 100% */
+    }
+
+    .profile-submit {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .profile-result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    /* CSS style for highlighting input fields */
+    .input-filled {
+      background-color: #E2F2FF;
+    }
+
+    /* CSS styles for background colors based on MBTI type */
+    .background-E {
+      background-color: #FFD5D5;
+    }
+
+    .background-I {
+      background-color: #D5FFE3;
+    }
+
+    .background-S {
+      background-color: #FFF7D5;
+    }
+
+    .background-N {
+      background-color: #E4D5FF;
+    }
+
+    .background-T {
+      background-color: #FFEFD5;
+    }
+
+    .background-F {
+      background-color: #D5F4FF;
+    }
+
+    .background-J {
+      background-color: #FFE1D5;
+    }
+
+    .background-P {
+      background-color: #D5E7FF;
+    }
+
+    /* CSS styles for the circular graph */
+    .graph-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .graph {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #F1F1F1;
+      overflow: hidden;
+    }
+
+    .graph::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #4CAF50;
+      transform-origin: center center;
+      transform: rotate(0deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>Homepage Profile</h1>
+  <div class="profile-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" class="profile-input" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" class="profile-input" required>
+
+    <label for="mbti">MBTI:</label>
+    <input type="text" id="mbti" class="profile-input" required>
+
+    <button type="button" class="profile-submit" onclick="submitProfile()">Submit</button>
+  </div>
+  <a href "https://www.16personalities.com/ko/%EB%AC%B4%EB%A3%8C-%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95-%EA%B2%80%EC%82%AC" target = "_blank"> MBTI 검사하러 가기</a><br>
+
+
+  <div class="profile-result" id="profileResult"></div>
+
+  <div class="graph-container">
+    <div class="graph" id="graph"></div>
+  </div>
+
+   <script>
+    // JavaScript code for handling form submission
+    function submitProfile() {
+      var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      var mbti = document.getElementById("mbti").value;
+
+      var result = "Name: " + name + "<br>";
+      result += "Age: " + age + "<br>";
+      result += "MBTI: " + mbti;
+
+      document.getElementById("profileResult").innerHTML = result;
+
+      // Add class to input fields when information is entered
+      if (name !== "") {
+        document.getElementById("name").classList.add("input-filled");
+      }
+
+      if (age !== "") {
+        document.getElementById("age").classList.add("input-filled");
+      }
+
+      if (mbti !== "") {
+        document.getElementById("mbti").classList.add("input-filled");
+
+        // Map MBTI type to background color class
+        var mbtiType = mbti.charAt(0).toUpperCase();
+        document.getElementById("mbti").classList.add("background-" + mbtiType);
+
+         // Get the percentage value
+        var percentage = mbti.slice(1); // Assuming the percentage is part of the MBTI value
+
+        // Rotate the graph based on the percentage
+        var rotationAngle = (percentage / 100) * 360;
+        document.getElementById("graph").style.transform = "rotate(" + rotationAngle + "deg)";
+      }
+    }
+
+  </script>

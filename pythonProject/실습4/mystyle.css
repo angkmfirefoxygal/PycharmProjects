@@ -1,0 +1,19 @@
+strong{
+    font-size : 20pt;
+    font-family : 휴먼옛체;
+    color : #003366;
+}
+
+span {
+    font-size : 20pt;
+    font-family : 휴먼매직체;
+    text-decoration: underline;
+    color : red;
+}
+
+p{
+    font-size : 12pt;
+    font-family: Arial, sans-serif;
+    color : black;
+
+}

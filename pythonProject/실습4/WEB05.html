@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>이미지 나타내기</title>
+	<style>
+		img {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+			margin: 5px;
+			cursor: pointer;
+		}
+		#main-img {
+			width: 400px;
+			height: 400px;
+			object-fit: cover;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Multiple Images Example</h1>
+	<img src="https://post-phinf.pstatic.net/MjAxODA1MjVfMjE1/MDAxNTI3MjIzMjY5NTEw.Oc9K1hiO1v2mnRpxGlHqp8fLGeduUAAsURrncvjBb_Ag.lz5bLoUTASE42VTH4WmXgA2MK313lW1o_vG5nauJXOYg.JPEG/Spain-Travel-Information-03.jpg?type=w1200" alt="Image 1" onclick="showImage(this)">
+	<img src="https://www.eurail.com/content/dam/images/eurail/park_guell_in_barcelona.adaptive.767.0.jpg" alt="Image 2" onclick="showImage(this)">
+	<img src="https://www.obonparis.com/uploads/BARCELONA%20ITINERARY/PARC%20GUELL_YN_50%20copy.jpg" alt="Image 3" onclick="showImage(this)">
+	<img src="https://img.khan.co.kr/newsmaker/1482/1482_62.jpg" alt="Image 4" onclick="showImage(this)">
+    <br>
+	<img id="main-img" src="https://www.travelnbike.com/news/photo/201807/62554_100319_5338.jpg" alt="Main Image">
+	<script>
+		function showImage(img) {
+			document.getElementById("main-img").src = img.src.replace("-small", "");
+		}
+	</script>
+</body>
+</html>

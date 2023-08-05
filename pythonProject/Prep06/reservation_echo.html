@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Information</title>
+</head>
+<body>
+    <h2>Reservation Information</h2>
+    <p>Thank you for your reservation! Here is the information you provided:</p>
+
+    <?php
+        // Retrieve the form data using the $_POST superglobal
+        $name = $_POST['name'];
+        $contact = $_POST['tel'];
+        $people = $_POST['people'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+        $menu = $_POST['menu'];
+        $memo = $_POST['memo'];
+
+        // Display the data using echo statements
+        echo "<p><strong>Name:</strong> $name</p>";
+        echo "<p><strong>Contact:</strong> $tel</p>";
+        echo "<p><strong>Number of People:</strong> $people</p>";
+        echo "<p><strong>Date:</strong> $date</p>";
+        echo "<p><strong>Time:</strong> $time</p>";
+        echo "<p><strong>Menu Selection:</strong> $menu</p>";
+        echo "<p><strong>Special Requests:</strong> $memo</p>";
+    ?>
+</body>
+</html>

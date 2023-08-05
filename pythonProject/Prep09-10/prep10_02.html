@@ -1,0 +1,11 @@
+<div id="button_area">
+  <input type="button" value="button1" onclick="removeButton(this)">
+  <input type="button" value="button2" onclick="removeButton(this)">
+  <input type="button" value="button3" onclick="removeButton(this)">
+</div>
+
+<script>
+function removeButton(button) {
+  button.parentNode.removeChild(button);
+}
+</script>

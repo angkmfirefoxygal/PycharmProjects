@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Input Value</title>
+</head>
+<body>
+  <input id="dept" type="text" name="department" value="web programming">
+  <button id="checkButton" onclick="checkValue()">Check Value</button>
+
+  <script>
+    function checkValue() {
+      var inputElement = document.getElementById('dept');
+      var initialValue = inputElement.getAttribute('data-initial-value');
+
+      if (inputElement.value !== initialValue) {
+        alert('The value has changed to: ' + inputElement.value);
+      }
+    }
+
+    // Store the initial value in the data-initial-value attribute
+    var inputElement = document.getElementById('dept');
+    inputElement.setAttribute('data-initial-value', inputElement.value);
+  </script>
+</body>
+</html>
+

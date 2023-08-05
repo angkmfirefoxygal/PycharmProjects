@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>수강과목조사</title>
+</head>
+<body>
+<h1>수강과목조사</h1>
+<form method="get" action ="form_app.js">
+  이름:<input type="text" name="p_name"><br>
+  학과:<input type="text" name="p_major"><br>
+  학년:<input type="text" list="titles"><br>
+
+  <datalist id="titles">
+    <option value="1학년"/>
+    <option value="2학년"/>
+    <option value="3학년"/>
+    <option value="4학년"/>
+  </datalist>
+
+  <input type="submit" value="확인">&nbsp;<input type="reset" value="취소">
+</form>
+</body>
+</html>

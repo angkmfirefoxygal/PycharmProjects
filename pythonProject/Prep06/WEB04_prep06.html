@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>예약하기</title>
+</head>
+<body>
+  <h2>레스토랑 예약하기</h2>
+<form action="reservation_echo.html" method="post">
+    <fieldset>
+    <legend>예약자 정보</legend>
+        <span>예약자 : </span><input type="text" name="name" required/><br>
+        <span>연락처 : </span><input type="tel" name="tel" placeholder="000-0000-0000" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"/><br>
+        <span>예약인원 :</span>
+        <select name="people">
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명</option>
+            <option value="5">5명 이상</option>
+        </select>
+  </fieldset>
+  <br>
+  <fieldset name="time">
+    <legend>예약 시간 선택</legend>
+    <input type="date" name="date"/> <input type="time" name="time"/>
+  </fieldset>
+  <br>
+  <fieldset name="menu">
+    <legend>메뉴 선택</legend>
+    <input type="radio" name="course" value="a" checked/>코스 A
+    <input type="radio" name="course" value="b" />코스 B
+    <input type="radio" name="course" value="c" />코스 C
+    <input type="radio" name="course" value="d" />코스 D
+    <br>
+    <span>요청사항:</span><br>
+    <textarea name="memo" cols="50" rows="5"></textarea>
+  </fieldset>
+  <br>
+  <input type="submit" value="예약"/>&nbsp;<input type="reset" value="취소"/>
+</body>
+</html>
